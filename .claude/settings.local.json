@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx dotenvx:*)",
+      "Bash(npm run dropsuite:*)",
+      "WebSearch",
+      "Bash(timeout 60 npm run:*)",
+      "Bash(npm run cybersecure:*)"
+    ]
+  }
+}

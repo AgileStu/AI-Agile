@@ -1,0 +1,51 @@
+{
+  "name": "Sample Document Generation Job",
+  "description": "Example configuration for document generation",
+  "template": {
+    "sitePath": "sites/Templates",
+    "driveId": "b!...",
+    "filePath": "Templates/Proposal-Template.docx"
+  },
+  "sources": [
+    {
+      "sitePath": "sites/ClientData",
+      "driveId": "b!...",
+      "filePath": "Clients/Acme-Corp/details.docx"
+    },
+    {
+      "sitePath": "sites/ClientData",
+      "filePath": "Clients/Acme-Corp/pricing.pdf"
+    }
+  ],
+  "extraction": {
+    "patterns": {
+      "company": "Company:\\s*(.+)",
+      "contact": "Contact:\\s*(.+)",
+      "amount": "Amount:\\s*\\$?([\\d,]+)"
+    },
+    "parseKeyValues": true
+  },
+  "generation": {
+    "delimiters": {
+      "start": "{{",
+      "end": "}}"
+    }
+  },
+  "output": {
+    "filename": "Proposal-Acme-Corp.docx",
+    "local": {
+      "enabled": true,
+      "directory": "./output"
+    },
+    "sharepoint": {
+      "enabled": false,
+      "sitePath": "sites/Generated",
+      "driveId": "b!...",
+      "folderPath": "Proposals/2026"
+    }
+  },
+  "staticData": {
+    "author": "AGILE IT LTD",
+    "date": "2026-02-05"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "ai-agile",
+  "version": "1.0.0",
+  "description": "AI development framework using Agile practices.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "env:get-key": "powershell.exe -ExecutionPolicy Bypass -File scripts/get-env-key.ps1",
+    "sharepoint": "dotenvx run -- node services/list-sharepoint-sites.js",
+    "huntress": "dotenvx run -- node services/huntress.js",
+    "atera": "dotenvx run -- node services/atera.js",
+    "dropsuite": "dotenvx run -- node services/dropsuite.js",
+    "cybersecure": "dotenvx run -- node services/cybersecure.js",
+    "docgen": "dotenvx run -- node services/docgen/index.js",
+    "docgen:job": "dotenvx run -- node services/docgen/index.js --job",
+    "docgen:sample": "dotenvx run -- node services/docgen/index.js --create-sample"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/identity": "^4.13.0",
+    "@dotenvx/dotenvx": "^1.52.0",
+    "@microsoft/microsoft-graph-client": "^3.0.7",
+    "docxtemplater": "^3.67.6",
+    "mammoth": "^1.11.0",
+    "pdf-parse": "^2.4.5",
+    "pizzip": "^3.2.0"
+  }
+}
